@@ -9,5 +9,41 @@ Para comenzar, sigue estos pasos:
 Clona este repositorio a tu máquina local usando:
 
 ```bash
-git clone 
+git clone URL_DEL_REPOSITORIO
+```
+
+### 2. Crear un Entorno Virtual
+
+Se recomienda el uso de un entorno virtual para instalar las dependencias. Puedes crear uno así:
+
+```bash
+python -m venv .venv
+```
+
+Activar el entorno virtual:
+
+En Windows:
+```bash
+.venv\Scripts\activate
+```
+
+En MacOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+### 3. Instalar Dependencias
+
+Instala las dependencias necesarias con:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Ejecutar la Aplicación
+
+Para ejecutar la aplicación, usa:
+
+```bash
+python run.py
 ```
