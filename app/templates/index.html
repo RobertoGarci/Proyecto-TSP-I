@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Universitario</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body style="background-image: url('static/images/001.jpg')">
+  <header>
+    <nav>
+        <ul class="main">
+          <div class="logo"> 
+          <img src="https://1000marcas.net/wp-content/uploads/2023/01/UNAM-Logo.png">
+          </div>
+            <li><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li><a href="#">Facultades</a>
+              <ul class="submain">
+                <!-- Por hacer -->
+                <li><a href="#">Facultad de Ingeniería</a></li>
+                <li><a href="#">Facultad de Medicina</a></li>
+                <li><a href="#">Facultad de Ciencias</a></li>
+                <li><a href="#">Facultad de Contaduría</a></li>
+                <li><a href="#">Facultad de Arquitectura</a></li>
+              </ul>
+            </li>
+            <li><a id="mostrar-busqueda" onclick="mostrarBarraBusqueda()">Profesores</a></li>
+            <form id="barra-busqueda" action="{{ url_for('main.ver_profesores') }}" style="display: none;" method="post">
+              <input type="text" id="campo-busqueda" name="nombre_profesor" placeholder="Buscar...">
+              <button type="submit">Buscar</button>
+            </form>
+        </ul>
+        {% if usuario %}
+          <p>Hola {{ usuario }}. <a href="{{ url_for('main.cerrar_sesion') }}">Cerrar sesión</a></p>
+        {% else %}
+          <button id="iniciar-sesion" class="btn ini" onclick="iniciarSesion()">Iniciar sesión</button>
+        {% endif %} 
+    </nav>
+  </header>
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+  <main>
+      <h1>PUMABlog</h1>
+            <p>¿Quieres conocer más acerca de la carrera o la facultad en la que          quieres estudiar y sus oportunidades?</p><p>¿Cansado de tener la incertidumbre de si    tus profesores son buenos?</p><p>Estás en el sitio correcto, UNIBlog es un sitio        donde    los estudiantes pueden sar sus opiniones sobre sus carreras y sobre sus        maestros sin escrúpulos y sin ningún tipo de represalias.</p><p>Aquí solo encontrarás    la verdad</p>
+            {% if usuario %}
+              .
+            {% else %}
+              <button id="registro" class="btn registro">Regístrate</button>
+            {% endif %} 
+            <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+  
+  </main>
+  <div class="imgportada1">
+        <img src="https://media.admagazine.com/photos/62d6c4b73ef2f3a790e18e88/1:1/w_4912,h_4912,c_limit/618279976">
+  </div>
+  <div class="imgportada2">
+    <img src="https://blog.cliengo.com/wp-content/uploads/2023/01/LKDN-Blog-Captacion-de-alumnos_Mesa-de-trabajo-1-1-800x300.png">
+  </div>
+  <div class="imgportada3">
+    <img src="https://mailrelay.com/wp-content/uploads/2017/06/crear-un-blog.png">
+  </div> 
+  </body>
+</html>

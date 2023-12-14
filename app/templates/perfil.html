@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UNAM</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body style="background-image: url('static/images/001.jpg')">
+    <header>
+      <nav>
+        <ul class="main">
+          <div class="logo"> 
+          <img src="https://1000marcas.net/wp-content/uploads/2023/01/UNAM-Logo.png">
+          </div>
+            <li><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li><a href="#">Facultades</a>
+              <ul class="submain">
+                <!-- Por hacer -->
+                <li><a href="#">Facultad de Ingeniería</a></li>
+                <li><a href="#">Facultad de Medicina</a></li>
+                <li><a href="#">Facultad de Ciencias</a></li>
+                <li><a href="#">Facultad de Contaduría</a></li>
+                <li><a href="#">Facultad de Arquitectura</a></li>
+              </ul>
+            </li>
+            <li><a id="mostrar-busqueda" onclick="mostrarBarraBusqueda()">Profesores</a></li>
+            <form id="barra-busqueda" action="{{ url_for('main.ver_profesores') }}" style="display: none;" method="post">
+              <input type="text" id="campo-busqueda" name="nombre_profesor" placeholder="Buscar...">
+              <button type="submit">Buscar</button>
+            </form>
+        </ul>
+        {% if usuario %}
+          <p>Hola {{ usuario }}. <a href="{{ url_for('main.cerrar_sesion') }}">Cerrar sesión</a></p>
+        {% else %}
+          <button id="iniciar-sesion" class="btn ini" onclick="iniciarSesion()">Iniciar sesión</button>
+        {% endif %} 
+    </nav>
+  </header>
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+    <div id="datos">
+    <h1>{{ nombre }}</h1>
+    <h2>{{ nombre_id.facultad }}</h2>
+    <h2>{{ nombre_id.materias }}</h2>
+    <h2>Calificación</h2>
+    <h2>{{ prom_calif}}</h2>
+    <h2>Dificultad</h2>
+    <h2>{{ prom_dif}}</h2>
+    <p><a href="{{ url_for('main.nuevo_comentario', nombre=nombre) }}">Agregar nuevo comentario</a></p>
+  </div>
+  <div id="opiniones">
+  {% for opinion in opiniones %}
+    <div id="opinion">
+    <h2>{{ opinion.usuario }}</h2><hr>
+    <p>Calificación: {{ opinion.calificacion }}  Dificultad: {{ opinion.dificultad }}</p><hr>
+    <li>{{ opinion.comentario }}</li>
+    </div>
+  {% endfor %}
+  </div>
+</body>
+</html>

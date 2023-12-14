@@ -1,0 +1,256 @@
+body {
+  font-family: Arial, sans-serif;
+}
+nav {
+    background-color: #0A2459; 
+    color: #fff; 
+    text-align: center; 
+    padding: 10px 0; 
+}
+nav ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+}
+nav ul li {
+    display: inline; 
+    margin-right: 30px; 
+}
+nav ul li a {
+    text-decoration: none; 
+    color: #D1D7E5; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+    font-size: 20px;
+}
+nav ul li a:hover {
+    color: #E0EB33; 
+}
+nav ul li:hover ul.submain {
+  visibility: visible;
+  opacity: 1;
+  top: 125px;
+  left: 580px;
+  text-align: left;
+}
+nav ul li ul.submain {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #0A2459;
+    box-shadow: #E0EB33;
+    border: 2px solid #5A9CD6;
+    padding: 15px 15px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: cubic-bezier(1, 0, 0, 1);
+}
+
+header p{
+  position: absolute;
+  right: 100px;
+  top: 40px;
+}
+
+.btn {
+    display: inline-block; 
+    padding: 10px 20px; 
+    margin: 15px; 
+    font-size: 15px; 
+    text-align: center; 
+    text-decoration: none; 
+    cursor: pointer; 
+    border-radius: 10px; 
+    border: none; 
+    color: #000000; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.ini:hover {
+  background-color: #0D3F6A; 
+  color: #fff; 
+}
+.ini {
+  position: absolute;
+  right: 100px;
+  top: 40px;
+  background-color: transparent; 
+  border: 2px solid #5A9CD6; 
+  color: #5A9CD6; 
+  transition: background-color 0.3s, color 0.3s;
+}
+.registro:hover {
+    background-color: #0D3F6A; 
+    color: #fff; 
+}
+.registro {
+    background-color: transparent; 
+    border: 2px solid #5A9CD6; 
+    color: #70a9dc; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#mostrar-busqueda {
+  cursor: pointer;
+  padding: 10px;
+  color: #D1D7E5;
+  text-align: center;
+}
+
+#mostrar-busqueda:hover{
+  color: #E0EB33;
+}
+
+#barra-busqueda {
+  padding: 10px;
+  position: absolute;
+  top: 25px;
+  left: 200px;
+  width: 60%;
+}
+
+#barra-busqueda input {
+  width: 80%;
+  padding: 8px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+#barra-busqueda button {
+  padding: 8px;
+  cursor: pointer; 
+  border-radius: 5px;
+  background-color: transparent; 
+  border: 2px solid #5A9CD6; 
+  color: #5A9CD6; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#barra-busqueda button:hover {
+  background-color: #0D3F6A; 
+  color: #fff;
+}
+
+
+main {
+    margin: 100px;
+    background-color: #0C1A39;
+    width: 520px;
+    font-family: Arial;
+    border-radius: 10px;
+}
+main h1 {
+    font-size: 50px; 
+    margin: 10px;
+    color: #DFE2E9;
+}
+main p { 
+    font-size: 15px;
+    text-align: justify;
+    margin: 20px;
+    width: 480px;
+  color: #DFE2E9;
+}
+.logo{
+  text-align: left;
+  margin: -10px;
+}
+nav ul img{
+  max-height: 100px;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+.imgportada1{
+  text-align: right;
+}
+.imgportada1 img{
+  max-height: 360px;
+  position: absolute;
+  right: 200px;
+  bottom: 150px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px #888888;
+  z-index: 1;
+}
+.imgportada2{
+  text-align: right;
+}
+.imgportada2 img{
+  max-height: 120px;
+  position: absolute;
+  right: 33px;
+  bottom: 367px;
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 3px 3px 5px #888888;
+}
+.imgportada3{
+  text-align: right;
+}
+.imgportada3 img{
+  max-height: 180px;
+  position: absolute;
+  right: 417px;
+  bottom: 100px;
+  border-radius: 80px;
+  z-index: 2;
+  box-shadow: 3px 3px 5px #888888;
+}
+
+#datos {
+    background-color: #0A2459;
+    width: 300px;
+    border-radius: 5px;
+    color: #D1D7E5;
+}
+#datos h1 { 
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+#datos h2 {
+  margin: 20px;
+  text-align: center;
+}
+#datos p {
+  text-align: center;
+  background-color: #D1D7E5;
+  font-size: 20px;
+  border: 2px solid #0A2459;
+  border-radius: 5px;
+}
+
+#opinion {
+  border: 5px solid #000000;
+}
+
+#opiniones {
+  background-color: #D1D7E5;
+  margin: 10px;
+  text-align: justify;
+  width: 1100px;
+  position: absolute;
+  right: 50px;
+  top: 147px;
+  border-radius: 5px;
+}
+#opiniones h2 {
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom: 0px;
+  margin: 10px;
+  font-size: 18px;
+}
+#opiniones p {
+  text-align: right;
+  margin: 10px;
+}
+#opiniones li {
+  text-align: center;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+hr {
+  border-style: groove;
+}

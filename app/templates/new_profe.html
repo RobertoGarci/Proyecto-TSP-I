@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/registro.css') }}">
+</head>
+<body style="background-image: url('static/images/003.jpg')">
+    <div class="form_registro">
+    <h1>Ingresa los datos del Profesor que deseas agregar</h1>
+    <form id="nuevo_profe" action="{{ url_for('main.teacher_form') }}" method="post">
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="facultad">Facultad:</label>
+        <input type="text" id="facultad" name="facultad" required><br>
+        <label for="materias">Materia/s:</label>
+        <textarea id="materias" name="materias" required></textarea><br>
+        <button type="submit" id="crear_profe" class="btn crear_profe">Guardar</button>
+    </form>
+    </div>
+</body>
+</html>

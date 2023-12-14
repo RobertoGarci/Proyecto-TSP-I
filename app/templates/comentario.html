@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/registro.css') }}">
+</head>
+<body style="background-image: url('static/images/003.jpg')">
+    <div class="form_registro">
+    <h1>Añade una opinión sobre {{ nombre }}</h1>
+    <form id="nuevo_comentario" action="{{ url_for('main.coment_form') }}" method="post">
+        <input type="hidden" name="nombre" value="{{ nombre }}">
+        <input type="hidden" name="usuario" value="{{ usuario }}">
+        <label for="calificacion">Calificación</label>
+        <input type="number" id="calificacion" name="calificacion" required><br>
+        <label for="dificultad">Dificultad</label>
+        <input type="number" id="dificultad" name="dificultad" required><br>
+        <label for="comentario">Comentario general</label>
+        <textarea id="comentario" name="comentario" required></textarea><br>
+        <button type="submit" id="crear_comentario" class="btn crear_comentario">Subir</button>
+    </form>
+    </div>
+</body>
+</html>

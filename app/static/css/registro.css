@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background-size: cover;
+}
+
+.form_registro {
+    background-color: #e8e7e7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 5px solid #070e5a;
+    text-align: center;
+}
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"]{
+    width: calc(80% - 20px);
+    font-size: 20px;
+    border: 1px solid rgb(8, 7, 79)ccc;
+    border-radius: 10px;
+}
+
+#materias {
+    width: calc(80% - 20px);
+    height: 100px;
+    font-size: 16px;
+    border: 1px solid rgb(8, 7, 79)ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+#comentario {
+    width: calc(100%);
+    height: 100px;
+    font-size: 12px;
+    border: 1px solid rgb(8, 7, 79)ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+button {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px 35px;
+    font-size: 20px; 
+    text-decoration: none; 
+    cursor: pointer;
+    border-radius: 50px;
+    color: #7e9814;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.registro:hover {
+    background-color: #0D3F6A; 
+    color: #fff; 
+}
+.registro {
+    background-color: transparent; 
+    border: 3px solid #5A9CD6; 
+    color: #5A9CD6; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+h1 {
+    background-color: #070e5a;
+    font-size: 25px;
+    border-radius: 20px;
+    color: rgb(143, 137, 20);
+    margin: 10px;
+    text-align: center;
+    width: 350px;
+    padding: 20px 0;
+}
+.ingreso:hover {
+    background-color: #0D3F6A; 
+    color: #fff; 
+}
+.ingreso {
+    background-color: transparent; 
+    border: 3px solid #5A9CD6; 
+    color: #5A9CD6; 
+    transition: background-color 0.3s, color 0.3s;
+}
+.crear_profe:hover {
+    background-color: #0D3F6A; 
+    color: #fff; 
+}
+.crear_profe {
+    background-color: transparent; 
+    border: 3px solid #5A9CD6; 
+    color: #5A9CD6; 
+    transition: background-color 0.3s, color 0.3s;
+}
+.crear_comentario:hover {
+    background-color: #0D3F6A; 
+    color: #fff; 
+}
+.crear_comentario {
+    background-color: transparent; 
+    border: 3px solid #5A9CD6; 
+    color: #5A9CD6; 
+    transition: background-color 0.3s, color 0.3s;
+}

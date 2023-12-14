@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UNAM</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body style="background-image: url('static/images/001.jpg')">
+    <header>
+      <nav>
+        <ul class="main">
+          <div class="logo"> 
+          <img src="https://1000marcas.net/wp-content/uploads/2023/01/UNAM-Logo.png">
+          </div>
+            <li><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li><a href="#">Facultades</a>
+              <ul class="submain">
+                <!-- Por hacer -->
+                <li><a href="#">Facultad de Ingeniería</a></li>
+                <li><a href="#">Facultad de Medicina</a></li>
+                <li><a href="#">Facultad de Ciencias</a></li>
+                <li><a href="#">Facultad de Contaduría</a></li>
+                <li><a href="#">Facultad de Arquitectura</a></li>
+              </ul>
+            </li>
+            <li><a id="mostrar-busqueda" onclick="mostrarBarraBusqueda()">Profesores</a></li>
+            <form id="barra-busqueda" action="{{ url_for('main.ver_profesores') }}" style="display: none;" method="post">
+              <input type="text" id="campo-busqueda" name="nombre_profesor" placeholder="Buscar...">
+              <button type="submit">Buscar</button>
+            </form>
+        </ul>
+        {% if usuario %}
+          <p>Hola {{ usuario }}. <a href="{{ url_for('main.cerrar_sesion') }}">Cerrar sesión</a></p>
+        {% else %}
+          <button id="iniciar-sesion" class="btn ini" onclick="iniciarSesion()">Iniciar sesión</button>
+        {% endif %} 
+    </nav>
+  </header>
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+  <h1>Profesores Encontrados:</h1>
+    <ul>
+      {% if e_profesor is none %}
+        <p>No se encontraron resultados <a href='/registro_profesores'>Agregar profesor</a></p>
+      {% else %}
+        {% for profe in e_profesor %}
+        <li><a href="{{ url_for('main.perfil', nombre=profe.nombre) }}" name="nombre_profe">{{profe.nombre}}</a> - {{profe.facultad}} - {{profe.materias}}</li>
+        {% endfor %}
+        <p>¿No es ninguno de estos? <a href='/registro_profesores'>Agregar profesor</a></p>
+      {% endif %}
+    </ul>
+</body>
+</html>
